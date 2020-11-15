@@ -79,6 +79,7 @@ while chancesLeft > 0:
         guess = input("Guess a word!\n")
         if guess not in selectedWord:
             chancesLeft -= 1
+            print(stages[chancesLeft])
             if chancesLeft == 0:
                 print("You Lose")
             else:
