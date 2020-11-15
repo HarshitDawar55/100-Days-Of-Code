@@ -21,8 +21,12 @@ while chancesLeft > 0:
         guess = input("Guess a word!\n")
         if guess not in selectedWord:
             chancesLeft -= 1
-            print(f"You left with lives {chancesLeft}")
+            if chancesLeft == 0:
+                print("You Lose")
+            else:
+                print(f"You left with lives {chancesLeft}")
         else:
-            index = selectedWord.index(guess)
-            toDisplay[index] = guess
-            print(f"Word is {' '.join(toDisplay)}")
+            for position in range(len(selectedWord)):
+                if guess == selectedWord[position]:
+                    toDisplay[position] = guess
+            print("""Word is '{}'""".format(' '.join(toDisplay)))
