@@ -301,6 +301,7 @@ while chancesLeft > 0:
             print(stages[chancesLeft])
             if chancesLeft == 0:
                 print("You Lose")
+                print("Word was: {}".format(selectedWord))
             else:
                 print(f"You left with lives {chancesLeft}")
         else:
