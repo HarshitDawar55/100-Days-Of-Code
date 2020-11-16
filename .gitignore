@@ -16,3 +16,4 @@ Inventory
 .idea
 .travis*
 token
+*pycache*
