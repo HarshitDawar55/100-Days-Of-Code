@@ -1,4 +1,5 @@
 import random
+import os
 
 logo = """
 .------.            _     _            _    _            _    
@@ -62,7 +63,7 @@ def executeGame():
         userScore = calculate_points(userCards)
         computerScore = calculate_points(computerCards)
         print(f"You Cards are: {userCards},\n Your Points are: {userScore}")
-        print(f"Opponent First Card is: {computerCards[0]},\n Your Points are: {calculate_points(userCards)}")
+        print(f"Opponent First Card is: {computerCards[0]}")
 
         if userScore == 1 or computerScore == 1 or userScore > 21:
             break
@@ -76,12 +77,19 @@ def executeGame():
                 print("Wrong Choice! ")
 
     # Making Computer Deal cards for itself
-    while computerScore != 1 or computerScore < 17:
+    while computerScore != 1 and computerScore < 17:
         computerCards.append(deal_a_card())
         computerScore = calculate_points(computerCards)
 
     # Printing the Final Results!
     print(f"You Final set of Cards: {userCards}, You Total Points: {userScore}")
     print(f"Opponent's Final set of Cards: {computerCards}, Opponent's Total Points: {computerScore}")
-    print(FinalResult(userScore, computerScore))
+    # If you print function with the below statement, it will print "None" in the output because the function does not return anything!
+    FinalResult(userScore, computerScore)
+
+
+executeGame()
+while input("Want to play again ('y' or 'n'): ").lower() == "y":
+    os.system("clear")
+    executeGame()
 
