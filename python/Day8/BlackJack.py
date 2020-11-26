@@ -13,6 +13,12 @@ logo = """
 
 
 # Function to Deal a Card!
+def deal_a_card():
+    cardValues = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    return random.choice(cardValues)
+
+
+# Function to calculate points from the cards!
 def calculate_points(handOfCards):
     if len(handOfCards) == 2 and sum(handOfCards) == 21:
         return 1
