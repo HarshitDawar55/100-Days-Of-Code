@@ -81,5 +81,7 @@ def executeGame():
         computerScore = calculate_points(computerCards)
 
     # Printing the Final Results!
-    print()
+    print(f"You Final set of Cards: {userCards}, You Total Points: {userScore}")
+    print(f"Opponent's Final set of Cards: {computerCards}, Opponent's Total Points: {computerScore}")
+    print(FinalResult(userScore, computerScore))
 
